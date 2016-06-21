@@ -1,5 +1,5 @@
 #+TITLE: Emacs Configuration
-#+AUTHOR: Your Name Here
+#+AUTHOR: Lucas Fields
 
 Boilerplate for a ~/.emacs.d/config.org emacs configuration using
 "Sane Defaults".
@@ -25,8 +25,8 @@ Steps to making this file yours:
 * Personal Information
 
 #+begin_src emacs-lisp
-(setq user-full-name "Your Name Here"
-      user-mail-address "your@email.here")
+(setq user-full-name Lucas Fields
+      user-mail-address lqf2b8@gmail.com)
 #+end_src
 
 * Customize settings
@@ -114,3 +114,6 @@ at point as the default value for occur.
 
 (bind-key "M-s o" 'occur-dwim)
 #+end_src
+* Programming Packages
+
+test test
