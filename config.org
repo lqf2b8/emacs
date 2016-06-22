@@ -25,8 +25,8 @@ Steps to making this file yours:
 * Personal Information
 
 #+begin_src emacs-lisp
-(setq user-full-name Lucas Fields
-      user-mail-address lqf2b8@gmail.com)
+(setq user-full-name "Lucas Fields"
+      user-mail-address "lqf2b8@gmail.com")
 #+end_src
 
 * Customize settings
