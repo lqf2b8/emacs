@@ -115,9 +115,13 @@ at point as the default value for occur.
 (bind-key "M-s o" 'occur-dwim)
 #+end_src
 * Programming Packages
-**HTML, CSS & Javascript
-***Web-made
-#+begin_src emacs-lisp
-(use-package web-mode
- :ensure t)
-
+** Web Proramming
+*** Emmet 
+;; Helps with shortcuts involving HTML and CSS
+#+begin_src emacs_lisp
+(use-package emmet-mode
+:ensure t
+:commands emmet-mode
+:config
+(add-hook 'html-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode))
