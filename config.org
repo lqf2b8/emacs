@@ -117,12 +117,12 @@ at point as the default value for occur.
 * Programming Packages
 ** Web Proramming
 *** Emmet 
-;; Helps with shortcuts involving HTML and CSS
-#+begin_src emacs_lisp
-(use-package emmet-mode
-:ensure t
-:commands emmet-mode
-:config
-(add-hook 'html-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook 'emmet-mode))
-#+end_src
+ Helps with shortcuts involving HTML and CSS
+#+BEGIN_SRC emacs-lisp
+  (use-package emmet-mode
+    :ensure t
+    :commands emmet-mode
+    :config
+    (add-hook 'html-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook 'emmet-mode))
+#+END_SRC
