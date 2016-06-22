@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>pp
+  <title>Lucas' Notes</title>
+</head>
+<body>
+  <h1>Basics of Web and HTML Notes</h1>
+  <ol>
+    <li><a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345401/modules/385165862675460/lessons/3873828673/concepts/483298540923"> Basics of Web</a>
+      <ol>
+	<li>HTML - Main document type used on the web
+	  <ol>
+	    <li>Glues all the content of the web together</li>
+	  </ol>
+	<li>Servers - store all the HTML and content  of the web</li>
+	<li>Client - personal computers used for viewing web content</li>
+	<li>HTTP - protocal used for clients and servers to communicate</li>
+	<li>Internet - computer network upon which HTTP requests alr made</li>
+      </ol>
+    </li>    
+    <li>Basics of HTML
+      <ol>
+	<li>Tags are what HTML uses to tell a browser how to render the content inclosed in them
+	  <ol>
+	    <li>most tags are meant to have a closing tag but there are a few tags that naturally do not contain content and therefore do not have a closing tag. These are called void tags</ol>
+	  </li>
+	<li>Elements is the term used to describe a well formed combonation of tags and their coresponding content
+	  <ol>
+	    <li>elements can be broken down as inline or block
+	      <ol>
+		<li>block elements create a container around the element whereas inline does not</li>
+	      </ol>
+	    </li>
+	  </ol>
+	</li>
+	<li>Atributes are modifiers placed inside the opening tag that cam furthur dictate how or what the browser renders</li>
+      </ol>
+    </li>
+  </ol>
+</body>
+</html>
+    
