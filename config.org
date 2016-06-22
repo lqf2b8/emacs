@@ -115,5 +115,9 @@ at point as the default value for occur.
 (bind-key "M-s o" 'occur-dwim)
 #+end_src
 * Programming Packages
+**HTML, CSS & Javascript
+***Web-made
+#+begin_src emacs-lisp
+(use-package web-mode
+ :ensure t)
 
-test test
