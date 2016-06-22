@@ -52,11 +52,10 @@ Sources for this section include [[https://github.com/magnars/.emacs.d/blob/mast
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
+
+
 ;; Answering just 'y' or 'n' will do
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-;; Change or set the default major modes of types
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 ;; Keep all backup and auto-save files in one directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
@@ -119,19 +118,13 @@ at point as the default value for occur.
 #+end_src
 * Programming Packages
 ** Web Proramming
-*** Web Mode
-#+BEGIN_SRC emacs-lisp
-  (use-package web-mode
-    :ensure t)
-
-#+END_SRC
-*** Emmet Mode 
+*** Emmet 
  Helps with shortcuts involving HTML and CSS
 #+BEGIN_SRC emacs-lisp
   (use-package emmet-mode
     :ensure t
     :commands emmet-mode
     :init
-    (dolist (hook '(web-mode-hook html-mode-hook css-mode-hook))
+    (dolist (hook '(html-mode-hook css-mode-hook))
       (add-hook hook #'emmet-mode)))
 #+END_SRC
