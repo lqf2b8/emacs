@@ -1,26 +1,14 @@
 #+TITLE: Emacs Configuration
 #+AUTHOR: Lucas Fields
 
-Boilerplate for a ~/.emacs.d/config.org emacs configuration using
-"Sane Defaults".
 
-Steps to making this file yours:
 
-1) Change all instances of "Your Name Here" to your name.
-2) Change all instances of "your@email.here" to your email address.
-3) Create ~/.emacs.d/custom.el even if it's empty.
-   Emacs will now write your (interactive) customizations to that
-   file. 
-4) Change the Sane Defaults if you need to. 
-   For example if you read and write Chinese and so prefer to default
-   to utf-16.
 5) Teach yourself what goes into your backup directories
    ~/.emacs.d/backups
    ~/.emacs.d/auto-save-list
    So you'll know where to look for older versions of files that
    you've edited. 
-6) Delete these instructions and replace them with a personalized
-   introduction. 
+ 
 
 * Personal Information
 
@@ -135,3 +123,12 @@ at point as the default value for occur.
     (dolist (hook '(web-mode-hook html-mode-hook css-mode-hook))
       (add-hook hook #'emmet-mode)))
 #+END_SRC
+* Email
+  gnus
+* Web
+* Shell
+  magit
+* Games
+  chess
+* Themes
+* Testing
