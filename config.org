@@ -44,7 +44,7 @@ Sources for this section include [[https://github.com/magnars/.emacs.d/blob/mast
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Change or set the default major modes of types
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+ (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 ;; Keep all backup and auto-save files in one directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
@@ -123,12 +123,57 @@ at point as the default value for occur.
     (dolist (hook '(web-mode-hook html-mode-hook css-mode-hook))
       (add-hook hook #'emmet-mode)))
 #+END_SRC
+*** Impatient Mode
+#+BEGIN_SRC emacs-lisp
+  (use-package impatient-mode
+    :ensure t
+    :commands impatient-mode
+    :init
+    (dolist (hook '(web-mode-hook html-mode-hook css-mode-hook js2-mode-hook))
+      (add-hook hook #'impatient-mode)))
+#+END_SRC
 * Email
   gnus
 * Web
-* Shell
-  magit
+* Shell and System
+** IDO Mode
+#+BEGIN_SRC emacs-lisp
+(use-package ido
+  :init
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode t)
+  (use-package ido-vertical-mode
+    :ensure t
+    :defer t
+    :init (ido-vertical-mode 1)
+    (setq ido-vertical-define-keys 'C-n-and-C-p-only))) 
+#+END_SRC
+** Magit Mode
+#+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t
+  :defer t
+  :bind ("C-c g" . magit-status)
+  :config
+  (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
+#+END_SRC
 * Games
   chess
 * Themes
+** Cyberpunk
+#+BEGIN_SRC emacs-lisp
+(use-package cyberpunk-theme
+  :if (window-system)
+  :ensure t
+  :init
+  (progn
+    (load-theme 'cyberpunk t)
+    (set-face-attribute `mode-line nil
+                        :box nil)
+    (set-face-attribute `mode-line-inactive nil
+                        :box nil)))
+
+#+END_SRC
+
 * Testing
