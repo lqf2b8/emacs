@@ -132,14 +132,94 @@ at point as the default value for occur.
     (dolist (hook '(web-mode-hook html-mode-hook css-mode-hook js2-mode-hook))
       (add-hook hook #'impatient-mode)))
 #+END_SRC
+** Rails
+*** flymake
+This package enables ruby specific syntax checking
+#+BEGIN_SRC emacs-lisp
+  (use-package flymake-ruby
+    :ensure t
+    :commands flymake-ruby
+    :init
+    (dolist (hook '(ruby-mode-hook))
+      (add-hook hook #'flymake-ruby-load))) 
+
+#+END_SRC    
+*** Fix Indent Default
+This changes the default setting in the Ruby major mode to align arguments better 
+#+BEGIN_SRC emacs-lisp
+(setq ruby-deep-indent-paren nil)
+#+END_SRC
+*** inf-ruby
+- This package will creat a Ruby REPL buffer when the user hit c r r
+#+BEGIN_SRC emacs-lisp
+  (use-package inf-ruby
+    :ensure t
+    :commands inf-ruby
+    :init 
+    :bind ("C-c r r" . inf-ruby))
+#+END_SRC
+*** rvm 
+- This package integrates emacs with the ruby rvm package manager
+#+BEGIN_SRC emacs-lisp
+  (use-package rvm
+    :ensure t
+    :commands rvm
+    :init
+    :bind ("C-c r a" . rvm-activate-corresponding-ruby))
+
+#+END_SRC 
+*** projectile
+- This package is used to manage Rails projects from within emacs
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :commands projectile
+    :init
+    (dolist (hook '(ruby-mode-hook))
+      (add-hook hook #'projectile-mode)))
+
+#+END_SRC
+*** robe
+#+BEGIN_SRC emacs-lisp
+  (use-package robe
+    :ensure t
+    :commands robe
+    :init
+    (dolist (hook '(ruby-mode-hook))
+      (add-hook hook #'robe-mode)))
+   
+#+END_SRC
+*** company mode
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :commands company-mode
+    :init
+    (dolist (hook '(after-init-hook))
+      (add-hook hook #'global-company-mode)))
+    
+#+END_SRC
 * Email
 ** Gnus Mode
                                        
-
 * Web
 * Shell and System
-** Helm  Mode
+** Ido Mode
 #+BEGIN_SRC emacs-lisp
+(use-package ido
+  :init
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode t)
+  (use-package ido-vertical-mode
+    :ensure t
+    :defer t
+    :init (ido-vertical-mode 1)
+    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+
+#+END_SRC
+** Helm  Mode
+#+BEGIN_SRC macs-lisp
 (use-package helm
   :ensure t
   :diminish helm-mode
